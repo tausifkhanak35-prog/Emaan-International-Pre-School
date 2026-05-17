@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Facilities – Emaan International Pre-School</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,700&family=DM+Sans:ital,opsz,wght@0,9..40,200;0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&family=Cinzel:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{--ivory:#FDFAF4;--ivory2:#F5F0E6;--ivory3:#EDE5D4;--emerald:#1B5E3B;--emerald2:#2E7D52;--emerald3:#3D9968;--emerald-pale:#EBF5EE;--emerald-light:#D4EDD9;--gold:#B8882A;--gold2:#D4A843;--gold3:#F0CB72;--gold-pale:#FDF3DC;--charcoal:#1A1A1A;--text:#2C2C2C;--muted:#7A7268;--green-wa:#25D366;}
+*{margin:0;padding:0;box-sizing:border-box;}html{scroll-behavior:smooth;-webkit-tap-highlight-color:transparent;}
+body{background:var(--ivory);color:var(--text);font-family:'DM Sans',sans-serif;overflow-x:hidden;}
+nav{position:fixed;top:0;left:0;right:0;z-index:1000;height:72px;padding:0 5%;display:flex;align-items:center;justify-content:space-between;background:rgba(253,250,244,0.92);backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);border-bottom:1px solid rgba(27,94,59,0.08);transition:height .4s,box-shadow .4s;}
+nav.scrolled{height:60px;box-shadow:0 4px 40px rgba(27,94,59,0.1);}
+.logo{display:flex;align-items:center;gap:12px;text-decoration:none;flex-shrink:0;}
+.logo-orb img{width:100%;height:100%;object-fit:contain;border-radius:10px;position:relative;z-index:1;}.logo-orb{width:44px;height:44px;border-radius:12px;background:#fff;display:flex;align-items:center;justify-content:center;padding:2px;box-shadow:0 4px 16px rgba(27,94,59,0.2);position:relative;overflow:hidden;flex-shrink:0;}
+
+@keyframes logoShine{0%,100%{transform:translateX(-100%);}50%{transform:translateX(100%);}}
+.logo-words b{font-family:'Cinzel',serif;font-size:14px;font-weight:700;color:var(--emerald);letter-spacing:1.5px;line-height:1.1;display:block;}
+.logo-words small{font-size:8px;letter-spacing:2px;color:var(--muted);text-transform:uppercase;}
+.nav-links{display:flex;align-items:center;gap:32px;list-style:none;}
+.nav-links a{color:var(--muted);text-decoration:none;font-size:11px;font-weight:500;letter-spacing:1.5px;text-transform:uppercase;transition:color .3s;position:relative;padding-bottom:2px;}
+.nav-links a::after{content:'';position:absolute;bottom:0;left:0;width:0;height:1.5px;background:var(--emerald);border-radius:2px;transition:width .35s;}
+.nav-links a:hover{color:var(--emerald);}
+.nav-links a:hover::after,.nav-links a.active::after{width:100%;}
+.nav-links a.active{color:var(--emerald);}
+.nav-cta{display:inline-flex;align-items:center;gap:8px;padding:11px 24px;background:linear-gradient(135deg,var(--emerald),var(--emerald2));color:#fff;text-decoration:none;font-size:11px;font-weight:600;letter-spacing:2px;text-transform:uppercase;border-radius:50px;box-shadow:0 6px 20px rgba(27,94,59,0.28);transition:all .3s;flex-shrink:0;}
+.nav-cta:hover{transform:translateY(-2px);}
+.ham-btn{display:none;width:44px;height:44px;border-radius:12px;background:var(--emerald-pale);border:1.5px solid rgba(27,94,59,0.15);flex-direction:column;align-items:center;justify-content:center;gap:5px;cursor:pointer;flex-shrink:0;-webkit-appearance:none;}
+.ham-btn span{display:block;width:20px;height:2px;background:var(--emerald);border-radius:2px;transition:all .4s cubic-bezier(.23,1,.32,1);transform-origin:center;}
+.ham-btn.open span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+.ham-btn.open span:nth-child(2){transform:scaleX(0);opacity:0;}
+.ham-btn.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+.mob-overlay{position:fixed;inset:0;z-index:990;background:rgba(27,94,59,0.15);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);opacity:0;pointer-events:none;transition:opacity .4s ease;}
+.mob-overlay.open{opacity:1;pointer-events:all;}
+.mob-nav{position:fixed;top:0;right:0;bottom:0;z-index:995;width:min(340px,88vw);background:var(--ivory);transform:translateX(100%);transition:transform .5s cubic-bezier(.23,1,.32,1);display:flex;flex-direction:column;overflow:hidden;box-shadow:-20px 0 60px rgba(27,94,59,0.15);}
+.mob-nav.open{transform:translateX(0);}
+.mob-nav-top{padding:28px 32px 24px;background:linear-gradient(135deg,var(--emerald),var(--emerald2));position:relative;overflow:hidden;flex-shrink:0;}
+.mob-nav-top::before{content:'';position:absolute;top:-60px;right:-60px;width:180px;height:180px;background:rgba(255,255,255,0.06);border-radius:50%;}
+.mob-nav-top::after{content:'';position:absolute;bottom:-40px;left:-30px;width:140px;height:140px;background:rgba(255,255,255,0.04);border-radius:50%;}
+.mob-logo{display:flex;align-items:center;gap:12px;position:relative;z-index:1;margin-bottom:16px;}
+.mob-logo-orb{width:44px;height:44px;background:rgba(255,255,255,0.18);border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:20px;border:1.5px solid rgba(255,255,255,0.25);}
+.mob-logo b{font-family:'Cinzel',serif;font-size:14px;font-weight:700;color:#fff;letter-spacing:1.5px;display:block;}
+.mob-logo small{font-size:8px;letter-spacing:2px;color:rgba(255,255,255,0.65);text-transform:uppercase;}
+.mob-tagline{font-size:12px;color:rgba(255,255,255,0.7);position:relative;z-index:1;line-height:1.5;}
+.mob-tagline span{color:var(--gold3);font-weight:600;}
+.mob-nav-links{flex:1;overflow-y:auto;padding:16px 0;}
+.mob-nav-links::-webkit-scrollbar{display:none;}
+.mob-link-item{display:flex;align-items:center;gap:16px;padding:16px 32px;text-decoration:none;color:var(--text);font-size:15px;font-weight:500;border-bottom:1px solid rgba(27,94,59,0.05);position:relative;overflow:hidden;opacity:0;transform:translateX(20px);transition:opacity .4s ease,transform .4s ease,color .3s,background .3s;}
+.mob-nav.open .mob-link-item{opacity:1;transform:translateX(0);}
+.mob-nav.open .mob-link-item:nth-child(1){transition-delay:.15s;}
+.mob-nav.open .mob-link-item:nth-child(2){transition-delay:.2s;}
+.mob-nav.open .mob-link-item:nth-child(3){transition-delay:.25s;}
+.mob-nav.open .mob-link-item:nth-child(4){transition-delay:.3s;}
+.mob-nav.open .mob-link-item:nth-child(5){transition-delay:.35s;}
+.mob-nav.open .mob-link-item:nth-child(6){transition-delay:.4s;}.mob-nav.open .mob-link-item:nth-child(7){transition-delay:.45s;}
+.mob-link-item::before{content:'';position:absolute;left:0;top:0;bottom:0;width:0;background:linear-gradient(90deg,var(--emerald-pale),transparent);transition:width .35s;}
+.mob-link-item:hover::before,.mob-link-item.active::before{width:100%;}
+.mob-link-item:hover,.mob-link-item.active{color:var(--emerald);font-weight:600;}
+.mob-link-icon{width:40px;height:40px;border-radius:12px;flex-shrink:0;background:var(--ivory2);border:1.5px solid var(--ivory3);display:flex;align-items:center;justify-content:center;font-size:18px;position:relative;z-index:1;transition:all .3s;}
+.mob-link-item:hover .mob-link-icon,.mob-link-item.active .mob-link-icon{background:var(--emerald-pale);border-color:rgba(27,94,59,0.2);}
+.mob-link-text{position:relative;z-index:1;}
+.mob-link-text b{display:block;font-size:14px;font-weight:600;}
+.mob-link-text small{font-size:11px;color:var(--muted);}
+.mob-link-arrow{margin-left:auto;font-size:16px;color:var(--muted);position:relative;z-index:1;transition:transform .3s;opacity:0;}
+.mob-link-item:hover .mob-link-arrow,.mob-link-item.active .mob-link-arrow{opacity:1;transform:translateX(4px);}
+.mob-nav-bottom{padding:20px 24px 32px;background:var(--ivory2);border-top:1px solid var(--ivory3);flex-shrink:0;opacity:0;transform:translateY(20px);transition:opacity .5s .45s ease,transform .5s .45s ease;}
+.mob-nav.open .mob-nav-bottom{opacity:1;transform:translateY(0);}
+.mob-enroll-btn{display:flex;align-items:center;justify-content:center;gap:10px;width:100%;padding:16px;background:linear-gradient(135deg,var(--emerald),var(--emerald2));color:#fff;text-decoration:none;font-size:13px;font-weight:700;letter-spacing:2px;text-transform:uppercase;border-radius:16px;margin-bottom:16px;box-shadow:0 8px 24px rgba(27,94,59,0.3);transition:all .3s;border:none;cursor:pointer;}
+.mob-contact-row{display:flex;gap:10px;}
+.mob-contact-btn{flex:1;display:flex;align-items:center;justify-content:center;gap:8px;padding:12px;border-radius:12px;text-decoration:none;font-size:12px;font-weight:600;transition:all .3s;}
+.mob-contact-btn.wa{background:linear-gradient(135deg,#e8f9ef,#d0f5e0);color:#1a8c4e;border:1.5px solid rgba(37,211,102,0.25);}
+.mob-contact-btn.ph{background:var(--ivory);color:var(--emerald);border:1.5px solid rgba(27,94,59,0.15);}
+/* PAGE HERO */
+.page-hero{padding:150px 5% 90px;background:linear-gradient(145deg,var(--ivory) 0%,#EDF7F0 50%,var(--ivory2) 100%);position:relative;overflow:hidden;text-align:center;}
+.ph-blob1{position:absolute;top:-150px;right:-100px;width:500px;height:500px;background:radial-gradient(circle,rgba(27,94,59,0.07),transparent 65%);border-radius:50%;}
+.ph-blob2{position:absolute;bottom:-100px;left:-100px;width:400px;height:400px;background:radial-gradient(circle,rgba(184,136,42,0.08),transparent 65%);border-radius:50%;}
+.ph-inner{position:relative;z-index:2;max-width:700px;margin:0 auto;}
+.ph-pill{display:inline-flex;align-items:center;gap:10px;background:var(--gold-pale);border:1px solid rgba(184,136,42,0.25);color:var(--gold);padding:7px 18px;border-radius:100px;font-size:11px;font-weight:600;letter-spacing:2px;text-transform:uppercase;margin-bottom:24px;animation:fup .7s ease both;}
+.ph-title{font-family:'Cormorant Garamond',serif;font-size:clamp(44px,6.5vw,88px);font-weight:700;line-height:.95;color:var(--charcoal);margin-bottom:16px;animation:fup .8s .1s ease both;}
+.ph-title em{font-style:italic;font-weight:300;color:var(--emerald);}
+.ph-sub{font-size:clamp(14px,1.8vw,16px);font-weight:300;color:var(--muted);line-height:1.9;max-width:580px;margin:0 auto;animation:fup .8s .2s ease both;}
+@keyframes fup{from{opacity:0;transform:translateY(28px);}to{opacity:1;transform:translateY(0);}}
+/* COMMONS */
+.sec-eye{display:inline-flex;align-items:center;gap:10px;font-size:10px;letter-spacing:3.5px;text-transform:uppercase;color:var(--emerald2);font-weight:600;margin-bottom:14px;}
+.sec-eye::before,.sec-eye::after{content:'';display:block;width:24px;height:2px;background:linear-gradient(90deg,var(--emerald),var(--gold2));border-radius:2px;flex-shrink:0;}
+.sec-title{font-family:'Cormorant Garamond',serif;font-size:clamp(32px,4.5vw,58px);font-weight:700;line-height:1.05;color:var(--charcoal);}
+.sec-title em{font-style:italic;font-weight:300;color:var(--emerald);}
+.sec-body{font-size:15px;color:var(--muted);line-height:1.9;font-weight:300;}
+.rv{opacity:0;transform:translateY(44px);transition:opacity .8s ease,transform .8s ease;}
+.rv.show{opacity:1;transform:translateY(0);}
+.rvl{opacity:0;transform:translateX(-44px);transition:opacity .8s ease,transform .8s ease;}
+.rvl.show{opacity:1;transform:translateX(0);}
+.rvr{opacity:0;transform:translateX(44px);transition:opacity .8s ease,transform .8s ease;}
+.rvr.show{opacity:1;transform:translateX(0);}
+.btn-em{display:inline-flex;align-items:center;gap:10px;padding:14px 32px;background:linear-gradient(135deg,var(--emerald),var(--emerald2));color:#fff;text-decoration:none;font-size:12px;font-weight:600;letter-spacing:2px;text-transform:uppercase;border-radius:50px;box-shadow:0 8px 32px rgba(27,94,59,0.3);transition:all .35s;position:relative;overflow:hidden;border:none;cursor:pointer;}
+.btn-em::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,var(--emerald2),var(--emerald3));opacity:0;transition:opacity .35s;}
+.btn-em:hover{transform:translateY(-3px);box-shadow:0 14px 44px rgba(27,94,59,0.42);}
+.btn-em:hover::before{opacity:1;}
+.btn-em span{position:relative;z-index:1;display:flex;align-items:center;gap:10px;}
+.btn-out{display:inline-flex;align-items:center;gap:8px;padding:13px 28px;background:transparent;color:var(--emerald);text-decoration:none;font-size:12px;font-weight:600;letter-spacing:2px;text-transform:uppercase;border:2px solid rgba(27,94,59,0.25);border-radius:50px;transition:all .35s;}
+.btn-out:hover{border-color:var(--emerald);background:var(--emerald-pale);}
+/* MOSAIC */
+#mosaic{padding:100px 5%;background:#fff;}
+.mos-in{max-width:1280px;margin:0 auto;}
+.mos-hdr{display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:52px;flex-wrap:wrap;gap:20px;}
+.mos-grid{display:grid;grid-template-columns:1.6fr 1fr 1fr;grid-template-rows:300px 260px;gap:18px;}
+.mtile{background:var(--ivory);border:1.5px solid var(--ivory3);border-radius:22px;padding:36px 32px;overflow:hidden;position:relative;transition:all .45s;cursor:default;}
+.mtile::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--emerald),var(--gold2));transform:scaleX(0);transform-origin:left;transition:transform .5s;}
+.mtile:hover{transform:translateY(-6px);box-shadow:0 26px 60px rgba(27,94,59,0.12);border-color:rgba(27,94,59,0.2);}
+.mtile:hover::before{transform:scaleX(1);}
+.mtile.tall{grid-row:1/3;}
+.mt-emoji{font-size:clamp(40px,5vw,52px);display:block;margin-bottom:18px;transition:transform .4s;}
+.mtile:hover .mt-emoji{transform:scale(1.12) rotate(-7deg);}
+.mt-tag{display:inline-block;background:var(--emerald-pale);color:var(--emerald2);font-size:9px;letter-spacing:2px;text-transform:uppercase;font-weight:700;padding:4px 12px;border-radius:100px;border:1px solid rgba(27,94,59,0.15);margin-bottom:14px;}
+.mtile h3{font-family:'Cormorant Garamond',serif;font-size:clamp(20px,2.5vw,26px);font-weight:700;color:var(--charcoal);margin-bottom:8px;transition:color .4s;}
+.mtile:hover h3{color:var(--emerald2);}
+.mtile p{font-size:13px;color:var(--muted);line-height:1.7;}
+.mt-size{display:inline-block;margin-top:14px;background:var(--gold-pale);color:var(--gold);font-size:9px;letter-spacing:1.5px;text-transform:uppercase;font-weight:700;padding:4px 12px;border-radius:100px;border:1px solid rgba(184,136,42,0.2);}
+/* DETAIL FACILITIES */
+#fac-detail{padding:100px 5%;background:var(--ivory);}
+.fd-in{max-width:1280px;margin:0 auto;}
+.fd-hdr{text-align:center;margin-bottom:56px;}
+.fd-hdr .sec-eye{justify-content:center;}
+.fd-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;}
+.fdcard{background:#fff;border-radius:22px;border:1.5px solid var(--ivory3);overflow:hidden;transition:all .45s;box-shadow:0 4px 18px rgba(0,0,0,0.03);}
+.fdcard:hover{transform:translateY(-10px);box-shadow:0 30px 64px rgba(27,94,59,0.13);border-color:rgba(27,94,59,0.2);}
+.fdc-top{padding:32px 32px 24px;}
+.fdc-1{background:linear-gradient(135deg,#E8F5E9,#C3E6C9);}
+.fdc-2{background:linear-gradient(135deg,#FFF8EC,#FDE8C0);}
+.fdc-3{background:linear-gradient(135deg,#E1F0FD,#BAD8F5);}
+.fdc-4{background:linear-gradient(135deg,#F3E4FB,#E0B8F5);}
+.fdc-5{background:linear-gradient(135deg,#FFEBEE,#FFCDD2);}
+.fdc-6{background:linear-gradient(135deg,#E0F7FA,#B2EBF2);}
+.fdc-top .fd-emoji{font-size:48px;display:block;margin-bottom:10px;transition:transform .4s;}
+.fdcard:hover .fd-emoji{transform:scale(1.1) rotate(-6deg);}
+.fd-badge{display:inline-block;background:rgba(255,255,255,0.78);backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,0.9);border-radius:100px;padding:4px 12px;font-size:9px;font-weight:600;letter-spacing:1px;color:var(--charcoal);text-transform:uppercase;}
+.fdc-body{padding:24px 32px 32px;}
+.fdc-body h3{font-family:'Cormorant Garamond',serif;font-size:24px;font-weight:700;color:var(--charcoal);margin-bottom:8px;transition:color .4s;}
+.fdcard:hover .fdc-body h3{color:var(--emerald2);}
+.fdc-body p{font-size:13px;color:var(--muted);line-height:1.75;margin-bottom:18px;}
+.fd-pts{list-style:none;display:flex;flex-direction:column;gap:7px;}
+.fd-pts li{display:flex;align-items:flex-start;gap:8px;font-size:12px;color:var(--text);line-height:1.5;}
+.fd-pts li::before{content:'✦';color:var(--emerald);font-size:9px;flex-shrink:0;margin-top:3px;}
+/* SAFETY */
+#safety{padding:100px 5%;background:linear-gradient(135deg,var(--emerald),var(--emerald2));position:relative;overflow:hidden;}
+.saf-bg{position:absolute;inset:0;background:radial-gradient(circle at 15% 50%,rgba(255,255,255,0.07),transparent 50%),radial-gradient(circle at 85% 30%,rgba(255,255,255,0.05),transparent 40%);}
+.saf-in{max-width:1280px;margin:0 auto;position:relative;z-index:1;}
+.saf-top{display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:center;margin-bottom:64px;}
+.saf-l .sec-eye{color:var(--gold3);}
+.saf-l .sec-eye::before,.saf-l .sec-eye::after{background:linear-gradient(90deg,var(--gold2),transparent);}
+.saf-l .sec-title{color:#fff;margin-bottom:16px;}
+.saf-l .sec-title em{color:var(--gold3);}
+.saf-l .sec-body{color:rgba(255,255,255,0.68);margin-bottom:28px;}
+.saf-r{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+.saf-stat{background:rgba(255,255,255,0.09);backdrop-filter:blur(14px);border:1.5px solid rgba(255,255,255,0.18);border-radius:20px;padding:28px 22px;text-align:center;transition:all .4s;}
+.saf-stat:hover{background:rgba(255,255,255,0.16);transform:translateY(-5px);}
+.saf-stat .ss-ico{font-size:36px;display:block;margin-bottom:12px;}
+.saf-stat h4{font-family:'Cormorant Garamond',serif;font-size:19px;font-weight:700;color:#fff;margin-bottom:5px;}
+.saf-stat p{font-size:12px;color:rgba(255,255,255,0.58);line-height:1.5;}
+.saf-strip{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;}
+.sc{background:rgba(255,255,255,0.08);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,0.15);border-radius:16px;padding:26px 18px;text-align:center;transition:all .4s;}
+.sc:hover{background:rgba(255,255,255,0.15);transform:translateY(-5px);}
+.sc-ico{font-size:32px;display:block;margin-bottom:10px;}
+.sc-lbl{font-size:12px;font-weight:500;color:#fff;line-height:1.4;}
+/* HEALTH */
+#health{padding:100px 5%;background:#fff;position:relative;overflow:hidden;}
+.hlt-bg{position:absolute;top:0;left:0;bottom:0;width:40%;background:radial-gradient(circle at 20% 50%,rgba(184,136,42,0.04),transparent 60%);pointer-events:none;}
+.hlt-in{max-width:1280px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;}
+.hlt-l .sec-body{margin:18px 0 28px;max-width:420px;}
+.hlt-items{display:flex;flex-direction:column;gap:14px;}
+.hi{background:var(--ivory);border:1.5px solid var(--ivory3);border-radius:16px;padding:22px 24px;display:flex;align-items:flex-start;gap:14px;transition:all .4s;}
+.hi:hover{background:#fff;border-color:rgba(27,94,59,0.2);transform:translateX(8px);box-shadow:0 8px 28px rgba(27,94,59,0.08);}
+.hi-ico{width:44px;height:44px;border-radius:12px;background:var(--emerald-pale);border:1.5px solid rgba(27,94,59,0.1);display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0;}
+.hi-text h4{font-family:'Cormorant Garamond',serif;font-size:17px;font-weight:700;color:var(--charcoal);margin-bottom:3px;}
+.hi-text p{font-size:12px;color:var(--muted);line-height:1.6;}
+.hlt-r{background:linear-gradient(135deg,var(--emerald),var(--emerald2));border-radius:26px;padding:48px 44px;position:relative;overflow:hidden;}
+.hlt-r::before{content:'';position:absolute;top:-50px;right:-50px;width:200px;height:200px;background:rgba(255,255,255,0.05);border-radius:50%;}
+.hlt-r::after{content:'';position:absolute;bottom:-40px;left:-40px;width:160px;height:160px;background:rgba(255,255,255,0.04);border-radius:50%;}
+.hlt-r-c{position:relative;z-index:1;}
+.hlt-r h3{font-family:'Cormorant Garamond',serif;font-size:30px;font-weight:700;color:#fff;margin-bottom:8px;}
+.hlt-r h3 em{font-style:italic;font-weight:300;color:var(--gold3);}
+.hlt-r p{font-size:13px;color:rgba(255,255,255,0.65);line-height:1.85;margin-bottom:24px;}
+.hlt-chk{display:flex;flex-direction:column;gap:12px;}
+.hc{display:flex;align-items:center;gap:12px;color:rgba(255,255,255,0.85);font-size:13px;}
+.hc-d{width:26px;height:26px;border-radius:50%;background:rgba(255,255,255,0.14);border:1.5px solid rgba(255,255,255,0.22);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:12px;}
+/* LOCATION */
+#location{padding:80px 5%;background:var(--gold-pale);border-top:1px solid rgba(184,136,42,0.15);border-bottom:1px solid rgba(184,136,42,0.15);}
+.loc-in{max-width:1280px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:40px;flex-wrap:wrap;}
+.loc-l{flex:1;min-width:280px;}
+.loc-l .sec-eye{color:var(--gold);}
+.loc-l .sec-eye::before,.loc-l .sec-eye::after{background:linear-gradient(90deg,var(--gold),transparent);}
+.loc-title{font-family:'Cormorant Garamond',serif;font-size:clamp(26px,3.5vw,44px);font-weight:700;color:var(--charcoal);margin-bottom:14px;}
+.loc-title em{font-style:italic;font-weight:300;color:var(--gold);}
+.loc-address{font-size:15px;color:var(--muted);line-height:1.85;margin-bottom:18px;}
+.loc-address strong{color:var(--charcoal);font-weight:600;}
+.loc-btns{display:flex;gap:12px;flex-wrap:wrap;}
+.loc-map-btn{display:inline-flex;align-items:center;gap:8px;padding:12px 22px;background:linear-gradient(135deg,var(--gold),var(--gold2));color:#fff;text-decoration:none;font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;border-radius:50px;box-shadow:0 6px 20px rgba(184,136,42,0.3);transition:all .3s;}
+.loc-map-btn:hover{transform:translateY(-2px);}
+.loc-wa-btn{display:inline-flex;align-items:center;gap:8px;padding:11px 20px;background:transparent;color:var(--gold);border:2px solid rgba(184,136,42,0.3);border-radius:50px;text-decoration:none;font-size:11px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;transition:all .3s;}
+.loc-wa-btn:hover{border-color:var(--gold);background:rgba(184,136,42,0.08);}
+.loc-card{background:#fff;border-radius:18px;padding:26px 28px;border:1.5px solid rgba(184,136,42,0.2);box-shadow:0 8px 28px rgba(184,136,42,0.1);min-width:260px;}
+.lc-row{display:flex;align-items:flex-start;gap:12px;margin-bottom:14px;padding-bottom:14px;border-bottom:1px solid var(--ivory3);}
+.lc-row:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0;}
+.lc-icon{width:34px;height:34px;border-radius:9px;background:var(--gold-pale);display:flex;align-items:center;justify-content:center;font-size:15px;flex-shrink:0;}
+.lc-txt strong{display:block;font-size:12px;font-weight:600;color:var(--charcoal);margin-bottom:2px;}
+.lc-txt span{font-size:12px;color:var(--muted);line-height:1.5;}
+/* CTA */
+#cta{padding:100px 5%;background:var(--ivory2);position:relative;overflow:hidden;text-align:center;}
+.cta-bg{position:absolute;inset:0;background:radial-gradient(ellipse 60% 80% at 50% 50%,rgba(27,94,59,0.05),transparent 70%);}
+.cta-in{position:relative;z-index:1;max-width:680px;margin:0 auto;}
+.cta-in .sec-eye{justify-content:center;margin-bottom:18px;}
+.cta-in .sec-title{font-size:clamp(32px,5vw,62px);margin-bottom:16px;}
+.cta-in .sec-body{max-width:460px;margin:0 auto 32px;text-align:center;}
+.cta-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;}
+/* FOOTER */
+footer{background:var(--charcoal);color:rgba(255,255,255,0.7);padding:68px 5% 28px;position:relative;}
+footer::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--emerald),var(--gold2),var(--emerald3));}
+.fgd{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:48px;max-width:1280px;margin:0 auto 48px;}
+.flogo{margin-bottom:14px;}
+.flogo .logo-orb{background:#fff;}
+.flogo .logo-words b{color:var(--gold3);}
+.flogo .logo-words small{color:rgba(255,255,255,0.35);}
+.fbrand p{font-size:12px;line-height:1.85;color:rgba(255,255,255,0.4);max-width:250px;margin:0 0 18px;}
+.fsoc{display:flex;gap:8px;}
+.fsoc a{width:34px;height:34px;border-radius:8px;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.08);display:flex;align-items:center;justify-content:center;font-size:14px;text-decoration:none;transition:all .3s;}
+.fsoc a:hover{background:rgba(27,94,59,0.35);border-color:var(--emerald);}
+.fcol h5{font-family:'Cinzel',serif;font-size:9px;letter-spacing:3px;color:var(--gold3);text-transform:uppercase;margin-bottom:18px;}
+.fcol ul{list-style:none;display:flex;flex-direction:column;gap:10px;}
+.fcol ul li a{font-size:12px;color:rgba(255,255,255,0.4);text-decoration:none;display:flex;align-items:center;gap:7px;transition:color .3s;}
+.fcol ul li a::before{content:'→';color:var(--emerald3);font-size:11px;}
+.fcol ul li a:hover{color:rgba(255,255,255,0.8);}
+.fci{display:flex;align-items:flex-start;gap:10px;margin-bottom:11px;font-size:12px;color:rgba(255,255,255,0.4);line-height:1.6;}
+.fci .ico{font-size:12px;margin-top:1px;flex-shrink:0;}
+.fbot{border-top:1px solid rgba(255,255,255,0.06);padding-top:22px;max-width:1280px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;}
+.fbot p{font-size:10px;color:rgba(255,255,255,0.2);letter-spacing:.5px;}
+.fbot span{color:var(--gold3);}
+.waf{position:fixed;bottom:28px;right:28px;z-index:9000;width:58px;height:58px;border-radius:50%;background:var(--green-wa);display:flex;align-items:center;justify-content:center;text-decoration:none;box-shadow:0 6px 28px rgba(37,211,102,0.5);animation:wapop .8s 2s ease both,waglow 3s 3s ease-in-out infinite;transition:transform .3s;}
+.waf:hover{transform:scale(1.1);}
+.waf svg{width:30px;height:30px;fill:#fff;}
+@keyframes wapop{from{opacity:0;transform:scale(0);}to{opacity:1;transform:scale(1);}}
+@keyframes waglow{0%,100%{box-shadow:0 6px 28px rgba(37,211,102,0.5);}50%{box-shadow:0 6px 44px rgba(37,211,102,0.8),0 0 0 10px rgba(37,211,102,0.1);}}
+/* RESPONSIVE */
+@media(max-width:1100px){.nav-links,.nav-cta{display:none;}.ham-btn{display:flex;}.mos-grid{grid-template-columns:1fr 1fr;grid-template-rows:auto;}.mtile.tall{grid-row:auto;}.fd-grid{grid-template-columns:1fr 1fr;}.saf-top{grid-template-columns:1fr;gap:48px;}.saf-strip{grid-template-columns:1fr 1fr;}.hlt-in{grid-template-columns:1fr;gap:48px;}.fgd{grid-template-columns:1fr 1fr;gap:32px;}.loc-in{flex-direction:column;}.loc-card{width:100%;}}
+@media(max-width:768px){nav{padding:0 20px;height:66px;}.page-hero{padding:110px 20px 72px;}.mos-grid{grid-template-columns:1fr;}.fd-grid{grid-template-columns:1fr;}.saf-r{grid-template-columns:1fr 1fr;}.saf-strip{grid-template-columns:1fr 1fr;}.fgd{grid-template-columns:1fr;gap:24px;}.fbot{flex-direction:column;text-align:center;}#mosaic,#fac-detail,#safety,#health,#cta{padding:72px 20px;}#location{padding:60px 20px;}}
+</style>
+</head>
+<body>
+<div class="mob-overlay" id="mobOverlay" onclick="closeMob()"></div>
+<div class="mob-nav" id="mobNav">
+  <div class="mob-nav-top">
+    <div class="mob-logo"><div class="mob-logo-orb"><img src="image/logo.png" alt="Emaan Logo" style="width:100%;height:100%;object-fit:contain;border-radius:10px;"></div><div><b>Emaan</b><small>International Pre-School</small></div></div>
+    <p class="mob-tagline">Mysore's <span>Montessori-inspired</span> Islamic preschool — where young minds blossom! 🌱</p>
+  </div>
+  <div class="mob-nav-links">
+    <a href="index.html" class="mob-link-item"><div class="mob-link-icon">🏠</div><div class="mob-link-text"><b>Home</b><small>Welcome to Emaan</small></div><span class="mob-link-arrow">›</span></a>
+    <a href="about.html" class="mob-link-item"><div class="mob-link-icon">💫</div><div class="mob-link-text"><b>About Us</b><small>Our story &amp; vision</small></div><span class="mob-link-arrow">›</span></a>
+    <a href="programs.html" class="mob-link-item"><div class="mob-link-icon">📚</div><div class="mob-link-text"><b>Programs</b><small>Classes &amp; courses</small></div><span class="mob-link-arrow">›</span></a>
+    <a href="facilities.html" class="mob-link-item active"><div class="mob-link-icon">🏫</div><div class="mob-link-text"><b>Facilities</b><small>Our campus</small></div><span class="mob-link-arrow">›</span></a>
+    <a href="gallery.html" class="mob-link-item"><div class="mob-link-icon">🖼️</div><div class="mob-link-text"><b>Gallery</b><small>Photos &amp; videos</small></div><span class="mob-link-arrow">›</span></a>
+    <a href="admissions.html" class="mob-link-item"><div class="mob-link-icon">✦</div><div class="mob-link-text"><b>Admissions</b><small>Apply now — seats open!</small></div><span class="mob-link-arrow">›</span></a>
+    <a href="contact.html" class="mob-link-item"><div class="mob-link-icon">📞</div><div class="mob-link-text"><b>Contact</b><small>Get in touch</small></div><span class="mob-link-arrow">›</span></a>
+  </div>
+  <div class="mob-nav-bottom">
+    <a href="admissions.html" class="mob-enroll-btn">✦ &nbsp; Enroll Your Child Now</a>
+    <div class="mob-contact-row"><a class="mob-contact-btn wa" href="https://wa.me/917795557292?text=Assalamu%20Alaikum!" target="_blank">💬 WhatsApp</a><a class="mob-contact-btn ph" href="tel:+917795557292">📞 Call Us</a></div>
+  </div>
+</div>
+<nav id="nav">
+  <a href="index.html" class="logo"><div class="logo-orb"><img src="image/logo.png" alt="Emaan Logo"></div><div class="logo-words"><b>Emaan</b><small>International Pre-School · Mysore</small></div></a>
+  <ul class="nav-links"><li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li><li><a href="programs.html">Programs</a></li><li><a href="facilities.html" class="active">Facilities</a></li><li><a href="gallery.html">Gallery</a></li><li><a href="admissions.html">Admissions</a></li><li><a href="contact.html">Contact</a></li></ul>
+  <a href="admissions.html" class="nav-cta">✦ Enroll Now</a>
+  <button class="ham-btn" id="hamBtn" onclick="toggleMob()"><span></span><span></span><span></span></button>
+</nav>
+<section class="page-hero">
+  <div class="ph-blob1"></div><div class="ph-blob2"></div>
+  <div class="ph-inner">
+    <div class="ph-pill">🏫 Our Campus</div>
+    <h1 class="ph-title">World-Class <em>Facilities</em><br>for Little Explorers</h1>
+    <p class="ph-sub">Every space at Emaan International Pre-School is thoughtfully designed to nurture curiosity, creativity and joyful learning — in a safe, inspiring environment.</p>
+  </div>
+</section>
+<!-- MOSAIC -->
+<section id="mosaic">
+  <div class="mos-in">
+    <div class="mos-hdr rv"><div><div class="sec-eye">Our Campus</div><h2 class="sec-title">Spaces Built for <em>Greatness</em></h2></div><a href="admissions.html" class="btn-em"><span>✦ &nbsp; Enroll Now</span></a></div>
+    <div class="mos-grid">
+      <div class="mtile tall rvl"><span class="mt-emoji">🏡</span><span class="mt-tag">Outdoor Learning</span><h3>Rooftop Terrace Play Area</h3><p>A breathtaking 1,700 sq.ft. open-air rooftop terrace where children explore, play freely and connect with nature under the open sky every single day.</p><span class="mt-size">1,700 sq. ft.</span></div>
+      <div class="mtile rv" style="transition-delay:.1s"><span class="mt-emoji">🎨</span><span class="mt-tag">Creativity Hub</span><h3>Art &amp; Craft Centre</h3><p>A vibrant studio space for imagination, fine motor skills and joyful self-expression through art and craft.</p></div>
+      <div class="mtile rv" style="transition-delay:.2s"><span class="mt-emoji">🎤</span><span class="mt-tag">Communication</span><h3>Public Speaking Centre</h3><p>Language-rich environment built for phonics, vocabulary, storytelling and confident public speaking.</p></div>
+      <div class="mtile rv" style="transition-delay:.3s"><span class="mt-emoji">🏗️</span><span class="mt-tag">200–250 sq. ft.</span><h3>Montessori Labs</h3><p>Calm, prepared classrooms with hands-on Montessori learning materials and individual activity zones.</p></div>
+      <div class="mtile rv" style="transition-delay:.4s"><span class="mt-emoji">🏖️</span><span class="mt-tag">Sensory Learning</span><h3>Sand Pit &amp; Activity Zone</h3><p>Dedicated sensory zone with sand play, tactile learning and group activities for development.</p></div>
+    </div>
+  </div>
+</section>
+<!-- DETAIL -->
+<section id="fac-detail">
+  <div class="fd-in">
+    <div class="fd-hdr rv"><div class="sec-eye">Every Detail</div><h2 class="sec-title rv" style="transition-delay:.1s">Every Facility, <em>Every Detail</em></h2></div>
+    <div class="fd-grid">
+      <div class="fdcard rv" style="transition-delay:.0s"><div class="fdc-top fdc-1"><span class="fd-emoji">🏡</span><span class="fd-badge">1,700 sq. ft.</span></div><div class="fdc-body"><h3>Rooftop Terrace</h3><p>Open-air rooftop that is safe, green and full of joy — where children run, explore and breathe fresh air every day.</p><ul class="fd-pts"><li>Open-air play with full safety supervision</li><li>Greenery and nature-inspired surroundings</li><li>Physical development through outdoor movement</li><li>Social interaction and group play activities</li></ul></div></div>
+      <div class="fdcard rv" style="transition-delay:.08s"><div class="fdc-top fdc-2"><span class="fd-emoji">🎨</span><span class="fd-badge">Creative Studio</span></div><div class="fdc-body"><h3>Art &amp; Craft Centre</h3><p>Stimulating space where children express imagination through a range of creative experiences.</p><ul class="fd-pts"><li>Art, craft and creative projects every week</li><li>Fine motor skill development activities</li><li>Sensory-based learning with textures</li><li>Confidence built through self-expression</li></ul></div></div>
+      <div class="fdcard rv" style="transition-delay:.16s"><div class="fdc-top fdc-3"><span class="fd-emoji">🎤</span><span class="fd-badge">Language Hub</span></div><div class="fdc-body"><h3>Public Speaking Centre</h3><p>Language-rich environment focused on communication skills, early literacy and confident expression.</p><ul class="fd-pts"><li>Vocabulary building and storytelling daily</li><li>Phonics and early reading readiness</li><li>Public speaking practice from young age</li><li>Critical thinking through discussions</li></ul></div></div>
+      <div class="fdcard rv" style="transition-delay:.24s"><div class="fdc-top fdc-4"><span class="fd-emoji">🏗️</span><span class="fd-badge">200–250 sq. ft.</span></div><div class="fdc-body"><h3>Montessori Classrooms</h3><p>Calm, child-friendly classrooms designed as prepared environments for exploration and independent thinking.</p><ul class="fd-pts"><li>Hands-on Montessori learning materials</li><li>Individual and group activity spaces</li><li>Focus on critical thinking and exploration</li><li>Child-paced, stress-free learning always</li></ul></div></div>
+      <div class="fdcard rv" style="transition-delay:.32s"><div class="fdc-top fdc-5"><span class="fd-emoji">🏖️</span><span class="fd-badge">Sensory Zone</span></div><div class="fdc-body"><h3>Sand Pit &amp; Activity Zone</h3><p>Sensory zone where children learn through exploration supporting physical and cognitive growth.</p><ul class="fd-pts"><li>Sand pit for sensory and tactile learning</li><li>Fine motor skill development activities</li><li>Creative outdoor activity expressions</li><li>Group play building teamwork skills</li></ul></div></div>
+      <div class="fdcard rv" style="transition-delay:.40s"><div class="fdc-top fdc-6"><span class="fd-emoji">🤝</span><span class="fd-badge">Community Space</span></div><div class="fdc-body"><h3>Parent Engagement Area</h3><p>Dedicated spaces for parenting workshops, parent-teacher meetings and community gatherings.</p><ul class="fd-pts"><li>Regular parenting workshops space</li><li>Interactive child development sessions</li><li>Parent-teacher conference rooms</li><li>Community gathering and event spaces</li></ul></div></div>
+    </div>
+  </div>
+</section>
+<!-- SAFETY -->
+<section id="safety">
+  <div class="saf-bg"></div>
+  <div class="saf-in">
+    <div class="saf-top">
+      <div class="saf-l rvl"><div class="sec-eye">Safety First Always</div><h2 class="sec-title">Your Child's Safety<br>is Our <em>Priority</em></h2><p class="sec-body">Our campus is equipped with modern security systems so every parent can feel completely at ease every single day.</p><a href="admissions.html" class="btn-em rv" style="display:inline-flex;"><span>✦ &nbsp; Enroll with Confidence</span></a></div>
+      <div class="saf-r rvr">
+        <div class="saf-stat"><span class="ss-ico">🔐</span><h4>Biometric Access</h4><p>Fingerprint-secured doors. Only authorized parents and staff can enter.</p></div>
+        <div class="saf-stat"><span class="ss-ico">📹</span><h4>Full CCTV</h4><p>Surveillance cameras covering every area of the school at all times.</p></div>
+        <div class="saf-stat"><span class="ss-ico">👷</span><h4>Safe Infrastructure</h4><p>Child-friendly furniture, soft flooring and age-appropriate equipment.</p></div>
+        <div class="saf-stat"><span class="ss-ico">👁️</span><h4>Constant Supervision</h4><p>Trained staff supervise children at all times throughout every activity.</p></div>
+      </div>
+    </div>
+    <div class="saf-strip rv">
+      <div class="sc"><span class="sc-ico">🔐</span><p class="sc-lbl">Biometric Access Doors</p></div>
+      <div class="sc"><span class="sc-ico">📹</span><p class="sc-lbl">CCTV Surveillance</p></div>
+      <div class="sc"><span class="sc-ico">🩺</span><p class="sc-lbl">Medical Check-ups</p></div>
+      <div class="sc"><span class="sc-ico">🚪</span><p class="sc-lbl">Safe Entry &amp; Exit</p></div>
+      <div class="sc"><span class="sc-ico">👩‍⚕️</span><p class="sc-lbl">First Aid Ready Staff</p></div>
+    </div>
+  </div>
+</section>
+<!-- HEALTH -->
+<section id="health">
+  <div class="hlt-bg"></div>
+  <div class="hlt-in">
+    <div class="hlt-l">
+      <div class="sec-eye rvl">Child Wellness</div>
+      <h2 class="sec-title rvl" style="transition-delay:.1s">Constant <em>Medical</em><br>Care &amp; Wellness</h2>
+      <p class="sec-body rvl" style="transition-delay:.2s;margin:18px 0 28px;max-width:420px;">A healthy child learns best. We ensure every child's well-being through proactive health monitoring, clean environments and regular wellness guidance.</p>
+      <div class="hlt-items rvl" style="transition-delay:.3s">
+        <div class="hi"><div class="hi-ico">🩺</div><div class="hi-text"><h4>Periodic Medical Check-ups</h4><p>Regular wellness monitoring and health assessments for all children.</p></div></div>
+        <div class="hi"><div class="hi-ico">🧼</div><div class="hi-text"><h4>Strict Hygiene Protocols</h4><p>Daily cleaning and sanitization maintained rigorously across all school spaces.</p></div></div>
+        <div class="hi"><div class="hi-ico">📋</div><div class="hi-text"><h4>Health Updates to Parents</h4><p>Regular communication with parents about their child's health and wellness.</p></div></div>
+        <div class="hi"><div class="hi-ico">🥗</div><div class="hi-text"><h4>Nutrition Awareness</h4><p>Healthy eating guidance and safe, hygienic food practices promoted daily.</p></div></div>
+      </div>
+    </div>
+    <div class="hlt-r rvr">
+      <div class="hlt-r-c">
+        <h3>Our <em>Wellness</em> Commitment</h3>
+        <p>We are deeply committed to maintaining the highest standards of child health, safety and emotional well-being at all times. Every child deserves to feel safe, healthy and happy every day at school.</p>
+        <div class="hlt-chk">
+          <div class="hc"><div class="hc-d">✓</div>Periodic medical check-ups for every child</div>
+          <div class="hc"><div class="hc-d">✓</div>Daily hygiene and sanitization routines</div>
+          <div class="hc"><div class="hc-d">✓</div>Immediate parent notification for any concerns</div>
+          <div class="hc"><div class="hc-d">✓</div>Nutrition guidance and healthy food practices</div>
+          <div class="hc"><div class="hc-d">✓</div>Emotional wellness support for every child</div>
+          <div class="hc"><div class="hc-d">✓</div>First aid trained staff always on campus</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- LOCATION -->
+<section id="location">
+  <div class="loc-in">
+    <div class="loc-l rv"><div class="sec-eye">Find Us</div><h2 class="loc-title">Visit Us in <em>Mysore</em></h2><p class="loc-address"><strong>Emaan International Pre-School</strong><br>Building No. 610, North East of NR Mohalla,<br>3rd B' Cross, 2nd Stage, R.S.Naidu Nagar,<br>Mysuru, Karnataka – 570007</p><div class="loc-btns"><a class="loc-map-btn" href="https://www.google.com/maps/search/Building+No.+610+NR+Mohalla+RS+Naidu+Nagar+Mysuru+Karnataka+570007" target="_blank">🗺️ Open in Google Maps</a><a class="loc-wa-btn" href="https://wa.me/917795557292?text=Assalamu%20Alaikum!%20Please%20share%20directions%20to%20Emaan%20International%20Pre-School." target="_blank">📱 Directions on WhatsApp</a></div></div>
+    <div class="loc-card rv" style="transition-delay:.15s"><div class="lc-row"><div class="lc-icon">📍</div><div class="lc-txt"><strong>Address</strong><span>Building No. 610, NR Mohalla, RS Naidu Nagar, Mysuru – 570007</span></div></div><div class="lc-row"><div class="lc-icon">📞</div><div class="lc-txt"><strong>Phone / WhatsApp</strong><span>+91 77955 57292</span></div></div><div class="lc-row"><div class="lc-icon">🕐</div><div class="lc-txt"><strong>School Hours</strong><span>Mon–Fri: 8:30AM–1:30PM<br>Sat: 9:00AM–12:00PM</span></div></div></div>
+  </div>
+</section>
+<!-- CTA -->
+<section id="cta">
+  <div class="cta-bg"></div>
+  <div class="cta-in">
+    <div class="sec-eye rv">Visit Our Campus</div>
+    <h2 class="sec-title rv" style="transition-delay:.1s">Come <em>See</em> Emaan<br>in Person</h2>
+    <p class="sec-body rv" style="transition-delay:.2s">We warmly invite all parents to visit Emaan International Pre-School — see our beautiful facilities, meet our caring teachers and feel the warm environment we've built for your child.</p>
+    <div class="cta-btns rv" style="transition-delay:.3s"><a href="admissions.html" class="btn-em"><span>✦ &nbsp; Book a School Visit</span></a><a href="contact.html" class="btn-out">📞 &nbsp; Contact Us</a></div>
+  </div>
+</section>
+<!-- FOOTER -->
+<footer>
+  <div class="fgd">
+    <div class="fbrand"><div class="flogo"><a href="index.html" class="logo" style="display:inline-flex;"><div class="logo-orb"><img src="image/logo.png" alt="Emaan Logo"></div><div class="logo-words"><b>Emaan</b><small>International Pre-School</small></div></a></div><p>Where Knowledge, Values &amp; Future Skills Flourish. Montessori-inspired Islamic preschool in Mysore.</p><div class="fsoc"><a href="#">📘</a><a href="#">📸</a><a href="https://wa.me/917795557292">💬</a></div></div>
+    <div class="fcol"><h5>Navigation</h5><ul><li><a href="index.html">Home</a></li><li><a href="about.html">About Us</a></li><li><a href="programs.html">Programs</a></li><li><a href="facilities.html">Facilities</a></li><li><a href="gallery.html">Gallery</a></li><li><a href="admissions.html">Admissions</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+    <div class="fcol"><h5>Classes</h5><ul><li><a href="admissions.html">Playgroup</a></li><li><a href="admissions.html">Nursery</a></li><li><a href="admissions.html">LKG</a></li><li><a href="admissions.html">UKG</a></li><li><a href="programs.html">Hifz Course</a></li><li><a href="programs.html">Adab Course</a></li></ul></div>
+    <div class="fcol"><h5>Contact</h5><div class="fci"><span class="ico">📞</span><span>+91 77955 57292</span></div><div class="fci"><span class="ico">📧</span><span>emaanpreschoolinfo@gmail.com</span></div><div class="fci"><span class="ico">📍</span><span>Building No. 610, NR Mohalla, RS Naidu Nagar, Mysuru – 570007</span></div><div class="fci"><span class="ico">🕐</span><span>Mon–Fri: 8:30AM–1:30PM</span></div></div>
+  </div>
+  <div class="fbot"><p>© 2025 <span>Emaan International Pre-School</span>. All rights reserved. Mysuru, Karnataka.</p><p>Admissions Open · <span>Playgroup | Nursery | LKG | UKG</span></p></div>
+</footer>
+<a class="waf" href="https://wa.me/917795557292?text=Assalamu%20Alaikum!%20I%20would%20like%20to%20know%20more%20about%20Emaan%20International%20Pre-School." target="_blank"><svg viewBox="0 0 32 32"><path d="M16 0C7.164 0 0 7.163 0 16c0 2.822.736 5.472 2.025 7.773L0 32l8.456-2.013A15.93 15.93 0 0016 32c8.836 0 16-7.163 16-16S24.836 0 16 0zm0 29.333a13.27 13.27 0 01-6.765-1.847l-.485-.287-5.02 1.195 1.234-4.883-.318-.502A13.244 13.244 0 012.667 16C2.667 8.636 8.636 2.667 16 2.667S29.333 8.636 29.333 16 23.364 29.333 16 29.333zm7.27-9.793c-.398-.199-2.354-1.161-2.72-1.294-.366-.132-.633-.199-.9.2-.266.398-1.032 1.293-1.265 1.56-.232.265-.464.298-.863.1-.398-.2-1.683-.62-3.205-1.979-1.184-1.058-1.984-2.364-2.217-2.763-.232-.398-.025-.614.175-.812.18-.179.398-.465.597-.698.2-.232.266-.398.398-.664.133-.266.067-.498-.033-.697-.1-.2-.9-2.165-1.232-2.965-.325-.778-.655-.673-.9-.685l-.765-.013c-.266 0-.698.1-1.064.498-.366.398-1.398 1.366-1.398 3.33s1.432 3.864 1.631 4.13c.2.265 2.82 4.305 6.83 6.036.954.413 1.699.659 2.28.843.958.305 1.83.262 2.52.159.768-.114 2.354-.963 2.688-1.893.332-.93.332-1.728.232-1.893-.1-.166-.366-.265-.764-.465z"/></svg></a>
+<script>
+function toggleMob(){const n=document.getElementById('mobNav'),o=document.getElementById('mobOverlay'),b=document.getElementById('hamBtn');n.classList.contains('open')?closeMob():(n.classList.add('open'),o.classList.add('open'),b.classList.add('open'),document.body.style.overflow='hidden');}
+function closeMob(){document.getElementById('mobNav').classList.remove('open');document.getElementById('mobOverlay').classList.remove('open');document.getElementById('hamBtn').classList.remove('open');document.body.style.overflow='';}
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeMob();});
+window.addEventListener('scroll',()=>{document.getElementById('nav').classList.toggle('scrolled',window.scrollY>60);},{passive:true});
+const obs=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('show');obs.unobserve(x.target);}});},{threshold:0.1});
+document.querySelectorAll('.rv,.rvl,.rvr').forEach(el=>obs.observe(el));
+</script>
+</body>
+</html>
